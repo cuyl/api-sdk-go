@@ -30,7 +30,12 @@ const (
 type FileImportResult struct {
 	WordCount               int
 	StringCount             int
-	TranslationImportErrors []string
+	TranslationImportErrors []struct {
+		FileURI        string
+		ImportKey      string
+		Messages       []string
+		StringHashcode string
+	}
 }
 
 // Import imports specified file as translation.
